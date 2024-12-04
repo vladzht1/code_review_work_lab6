@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CalculatorTest {
     private Calculator calculator;
 
@@ -27,7 +25,7 @@ class CalculatorTest {
     void div() {
         assertEquals(calculator.div(10, 5), 5);
         assertEquals(calculator.div(2, 2), 1);
-        assertThrows(ArithmeticException.class, () -> calculator.div(2, 0));
+        assertThrows(IllegalArgumentException.class, () -> calculator.div(2,0));
     }
 
     @Test
@@ -36,9 +34,14 @@ class CalculatorTest {
         assertEquals(calculator.times(5, 0), 0);
         assertEquals(calculator.times(-2, 7), -14);
     }
-
+  
     @Test
-    void solver() {
+    void solverLisa() {
+        assertEquals(calculator.solver(), 2);
+    }
+  
+    @Test
+    void solverVlad() {
         assertEquals(calculator.solver(), 14);
     }
 }
