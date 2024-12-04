@@ -4,36 +4,44 @@ class CalculatorTest {
     private Calculator calculator;
 
     public CalculatorTest() {
-        this.calculator = new Calculator();
+        calculator = new Calculator();
     }
-
 
     @Test
     void add() {
-        assert(calculator.add(1, 1) == 2);
-        assert(calculator.add(10, 3) == 13);
+        assertEquals(calculator.add(2, 3), 5);
+        assertEquals(calculator.add(-4, 4), 0);
+        assertEquals(calculator.add(1, 0), 1);
     }
 
     @Test
     void dif() {
-        assert(calculator.dif(13, 2) == 11);
-        assert(calculator.dif(5, 3) == 2);
+        assertEquals(calculator.dif(10, 5), 5);
+        assertEquals(calculator.dif(3, 6), -3);
+        assertEquals(calculator.dif(4, 4), 0);
     }
 
     @Test
     void div() {
-        assert(calculator.div(12, 2) == 6);
-        assert(calculator.div(9, 3) == 3);
+        assertEquals(calculator.div(10, 5), 5);
+        assertEquals(calculator.div(2, 2), 1);
         assertThrows(IllegalArgumentException.class, () -> calculator.div(2,0));
     }
 
     @Test
     void times() {
-        assert(calculator.times(12, 2) == 24);
-        assert(calculator.dif(9, 3) == 27);
+        assertEquals(calculator.times(2, 2), 4);
+        assertEquals(calculator.times(5, 0), 0);
+        assertEquals(calculator.times(-2, 7), -14);
     }
+  
     @Test
-    void solver() {
-        assert(calculator.solver() == 2);
+    void solverLisa() {
+        assertEquals(calculator.solver(), 2);
+    }
+  
+    @Test
+    void solverVlad() {
+        assertEquals(calculator.solver(), 14);
     }
 }
