@@ -1,31 +1,38 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CalculatorTest {
+    private Calculator calculator;
+
+    public CalculatorTest() {
+        this.calculator = new Calculator();
+    }
+
 
     @Test
     void add() {
-        //TODO inser your realisation in test-method add
+        assert(calculator.add(1, 1) == 2);
+        assert(calculator.add(10, 3) == 13);
     }
 
     @Test
     void dif() {
-        //TODO inser your realisation in test-method dif
+        assert(calculator.dif(13, 2) == 11);
+        assert(calculator.dif(5, 3) == 2);
     }
 
     @Test
     void div() {
-        //TODO inser your realisation in test-method div
+        assert(calculator.div(12, 2) == 6);
+        assert(calculator.div(9, 3) == 3);
     }
 
     @Test
     void times() {
-        //TODO inser your realisation in test-method times
+        assert(calculator.times(12, 2) == 24);
+        assert(calculator.dif(9, 3) == 27);
     }
-
     @Test
     void solver() {
-        //TODO inser your realisation in test-method solver
+        assert(calculator.solver() == 2);
     }
 }
