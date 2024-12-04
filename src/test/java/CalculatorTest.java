@@ -24,6 +24,7 @@ class CalculatorTest {
     void div() {
         assert(calculator.div(12, 2) == 6);
         assert(calculator.div(9, 3) == 3);
+        assertThrows(IllegalArgumentException.class, () -> calculator.div(2,0));
     }
 
     @Test

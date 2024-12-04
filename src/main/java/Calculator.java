@@ -6,6 +6,9 @@ public class Calculator {
         return a - b;
     }
     public int div(int a, int b){
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
         return a / b;
     }
     public int times(int a, int b){
