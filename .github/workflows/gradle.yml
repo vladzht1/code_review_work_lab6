@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: read|write
 
     steps:
     - uses: actions/checkout@v4
@@ -26,10 +26,10 @@ jobs:
     - name: Build and run tests with Gradle Wrapper
       run: ./gradlew build
       
-  dependency-submission:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+  # dependency-submission:
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: write
 
     # steps:
     # - uses: actions/checkout@v4
