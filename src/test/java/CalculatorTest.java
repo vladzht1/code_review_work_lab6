@@ -1,3 +1,6 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 class CalculatorTest {
@@ -23,7 +26,7 @@ class CalculatorTest {
 
     @Test
     void div() {
-        assertEquals(calculator.div(10, 5), 5);
+        assertEquals(calculator.div(10, 5), 2);
         assertEquals(calculator.div(2, 2), 1);
         assertThrows(IllegalArgumentException.class, () -> calculator.div(2,0));
     }
@@ -34,14 +37,14 @@ class CalculatorTest {
         assertEquals(calculator.times(5, 0), 0);
         assertEquals(calculator.times(-2, 7), -14);
     }
-  
+
     @Test
     void solverLisa() {
-        assertEquals(calculator.solver(), 2);
+        assertEquals(calculator.solverLisa(), 2);
     }
-  
+
     @Test
     void solverVlad() {
-        assertEquals(calculator.solver(), 14);
+        assertEquals(calculator.solverVlad(), 14);
     }
 }
